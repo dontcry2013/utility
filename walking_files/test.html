@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)http://blog.cxycs.com/demos/girl/ -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>HTML5 动画  小女孩四方行走</title>
+<script src="./easeljs-0.7.1.min.js"></script>
+<style type="text/css">
+body{
+	background-color: #202020;
+	color:#e0e0e0;
+}
+
+canvas {
+	border: solid 1px #e0e0e0;
+}
+</style>
+</head>
+<body>
+<h1>第一个HTML5动画</h1>
+<table>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<h2>girl</h2>
+				<p>长按键盘上下左右 ↑ ↓ ← →</p>
+			</td>
+			<td><canvas id="girl" width="500" height="800"></canvas>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<script type="text/javascript">
+var canvas = document.getElementById("girl");
+var stage = new createjs.Stage(canvas);
+var regX = 0;
+var regY = 0;
+var girl;
+var sprite;
+
+window.onload = function(){
+	girlInit();
+}
+
+function girlInit(){
+	var opts = {
+		framerate: 30,
+		// images: ["./Mimiwalk.png"],
+		// frames: {width:175, height:400, count:24},
+		// images: ["./MimiSpriteSheet.png"],
+		// frames: {width:191.45, height:380, count:60},
+		images: ["./spritesheet_grant.png"],
+		frames: {width:165, height:292, count:64},
+		animations: {
+        	"front": [0, 12, "right"],
+        	"right": [35, 63, "front"]
+    	}
+	}
+	sprite = new createjs.SpriteSheet(opts);
+	girl = new createjs.Sprite(sprite, "front");
+
+	stage.addChild(girl);
+	createjs.Ticker.timingMode = createjs.Ticker.RAF;
+	createjs.Ticker.addEventListener("tick", stage);
+}
+
+setTimeout(function(){
+	girl.gotoAndStop("front");
+}, 1000);
+
+setTimeout(function(){
+	girl.gotoAndPlay("front");
+}, 1500);
+
+</script>
+
+</body>
+</html>

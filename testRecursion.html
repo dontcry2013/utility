@@ -1,0 +1,602 @@
+<html>
+	<head>
+		<script>
+			var treeData = [
+    {
+        "1": {
+            "id": "1",
+            "name": "AEAP English Language Program (ELP)",
+            "parent": "69"
+        },
+        "8": {
+            "id": "8",
+            "name": "Higher Education (Learning for Academic Subjects)",
+            "parent": "0"
+        },
+        "9": {
+            "id": "9",
+            "name": " ",
+            "parent": "1"
+        },
+        "16": {
+            "id": "16",
+            "name": "AEMG CAP PD Program for Academics in China",
+            "parent": "27"
+        },
+        "17": {
+            "id": "17",
+            "name": "AEAP English Language Program (ELP)_Student",
+            "parent": "69"
+        },
+        "19": {
+            "id": "19",
+            "name": "AEMG Learning Chinese and Culture",
+            "parent": "27"
+        },
+        "20": {
+            "id": "20",
+            "name": "跟着中医学中文 Learn Chinese with traditional Chinese medicine",
+            "parent": "19"
+        },
+        "22": {
+            "id": "22",
+            "name": "Learn Chinese Language",
+            "parent": "19"
+        },
+        "23": {
+            "id": "23",
+            "name": "The University of Western Australia",
+            "parent": "8"
+        },
+        "24": {
+            "id": "24",
+            "name": "UWA/SDUW Finance",
+            "parent": "125"
+        },
+        "25": {
+            "id": "25",
+            "name": "UWA/SWU Faculty of Engineering and Mathematical Sciences",
+            "parent": "23"
+        },
+        "27": {
+            "id": "27",
+            "name": "AEMG Academy",
+            "parent": "0"
+        },
+        "29": {
+            "id": "29",
+            "name": "Griffith University",
+            "parent": "8"
+        },
+        "30": {
+            "id": "30",
+            "name": "RMIT University",
+            "parent": "8"
+        },
+        "31": {
+            "id": "31",
+            "name": "Swinburne University of Technology",
+            "parent": "8"
+        },
+        "32": {
+            "id": "32",
+            "name": "Australian National University",
+            "parent": "8"
+        },
+        "33": {
+            "id": "33",
+            "name": "University of Tasmania",
+            "parent": "8"
+        },
+        "34": {
+            "id": "34",
+            "name": "Deakin University",
+            "parent": "8"
+        },
+        "35": {
+            "id": "35",
+            "name": "GU/WSU Sports Rehabilitation",
+            "parent": "29"
+        },
+        "36": {
+            "id": "36",
+            "name": "RMIT/NUAA Transportation (Airport Management)",
+            "parent": "30"
+        },
+        "38": {
+            "id": "38",
+            "name": "AEAP Teacher Online Space (TOS)",
+            "parent": "1"
+        },
+        "39": {
+            "id": "39",
+            "name": "AEAP Academic Skills Program Course (ASP)",
+            "parent": "69"
+        },
+        "40": {
+            "id": "40",
+            "name": "National College of Ireland",
+            "parent": "8"
+        },
+        "41": {
+            "id": "41",
+            "name": "GU/NCHK Environmental Engineering",
+            "parent": "29"
+        },
+        "42": {
+            "id": "42",
+            "name": "GU/NUCM Biopharmacy",
+            "parent": "29"
+        },
+        "43": {
+            "id": "43",
+            "name": "GU/YNNU Sports Management(Golf)",
+            "parent": "29"
+        },
+        "44": {
+            "id": "44",
+            "name": "GU/CCNU Social Work",
+            "parent": "29"
+        },
+        "45": {
+            "id": "45",
+            "name": "GU/CUMT Civil Engineering",
+            "parent": "29"
+        },
+        "46": {
+            "id": "46",
+            "name": "RMIT/YNNU Animation",
+            "parent": "30"
+        },
+        "47": {
+            "id": "47",
+            "name": "RMIT/SDUW Mechanical Engineering",
+            "parent": "30"
+        },
+        "48": {
+            "id": "48",
+            "name": "RMIT/CCNU Early Childhood Education",
+            "parent": "30"
+        },
+        "49": {
+            "id": "49",
+            "name": "RMIT/CUMT Architectural Environment and Equipment Engineering",
+            "parent": "30"
+        },
+        "50": {
+            "id": "50",
+            "name": "SUT/IMNU Early Childhood Education",
+            "parent": "31"
+        },
+        "51": {
+            "id": "51",
+            "name": "SUT/NUCM Public Administration",
+            "parent": "31"
+        },
+        "52": {
+            "id": "52",
+            "name": "SUT/CCNU Biotechnology",
+            "parent": "31"
+        },
+        "53": {
+            "id": "53",
+            "name": "ANU/SWU Psychology",
+            "parent": "32"
+        },
+        "54": {
+            "id": "54",
+            "name": "ANU/SDUW Computer Science",
+            "parent": "32"
+        },
+        "55": {
+            "id": "55",
+            "name": "UTas/OUC Marine Science",
+            "parent": "33"
+        },
+        "56": {
+            "id": "56",
+            "name": "UTas/XUST Civil Engineering",
+            "parent": "33"
+        },
+        "57": {
+            "id": "57",
+            "name": "DU/SWU Software Engineering",
+            "parent": "34"
+        },
+        "58": {
+            "id": "58",
+            "name": "DU/IMNU Animation",
+            "parent": "34"
+        },
+        "59": {
+            "id": "59",
+            "name": "NCI/YNNU Accounting",
+            "parent": "40"
+        },
+        "60": {
+            "id": "60",
+            "name": "AEMG Professional Development Staff & Teacher Training",
+            "parent": "27"
+        },
+        "61": {
+            "id": "61",
+            "name": "PD Staff & Teacher Training_2016",
+            "parent": "60"
+        },
+        "62": {
+            "id": "62",
+            "name": "AEAP Teacher Resource Center (TRC)",
+            "parent": "1"
+        },
+        "65": {
+            "id": "65",
+            "name": "EAP2S3",
+            "parent": "137"
+        },
+        "66": {
+            "id": "66",
+            "name": "GEPIS1_GEPPS1",
+            "parent": "137"
+        },
+        "67": {
+            "id": "67",
+            "name": "Student Test Report ",
+            "parent": "17"
+        },
+        "68": {
+            "id": "68",
+            "name": "Student Login",
+            "parent": "17"
+        },
+        "69": {
+            "id": "69",
+            "name": "AEMG Language Department ",
+            "parent": "27"
+        },
+        "71": {
+            "id": "71",
+            "name": "Semester 3 & 4_2016",
+            "parent": "39"
+        },
+        "73": {
+            "id": "73",
+            "name": "CCNU_WSU",
+            "parent": "38"
+        },
+        "74": {
+            "id": "74",
+            "name": "CUMT",
+            "parent": "38"
+        },
+        "75": {
+            "id": "75",
+            "name": "NUAA_NUCM",
+            "parent": "38"
+        },
+        "76": {
+            "id": "76",
+            "name": "OUC",
+            "parent": "38"
+        },
+        "77": {
+            "id": "77",
+            "name": "SWU",
+            "parent": "38"
+        },
+        "78": {
+            "id": "78",
+            "name": "SDUW",
+            "parent": "38"
+        },
+        "79": {
+            "id": "79",
+            "name": "SDUST",
+            "parent": "38"
+        },
+        "80": {
+            "id": "80",
+            "name": "XUST_XUAT",
+            "parent": "38"
+        },
+        "83": {
+            "id": "83",
+            "name": "NCHK",
+            "parent": "38"
+        },
+        "87": {
+            "id": "87",
+            "name": "YNNU",
+            "parent": "38"
+        },
+        "94": {
+            "id": "94",
+            "name": "IMUFE_IMNU_IMYLS",
+            "parent": "38"
+        },
+        "98": {
+            "id": "98",
+            "name": "2015 Autumn Semester",
+            "parent": "67"
+        },
+        "99": {
+            "id": "99",
+            "name": "2016 Spring Semester",
+            "parent": "67"
+        },
+        "100": {
+            "id": "100",
+            "name": "2016 Autumn Semester",
+            "parent": "67"
+        },
+        "101": {
+            "id": "101",
+            "name": "RMIT/NUCM Food Quality and Safety",
+            "parent": "30"
+        },
+        "102": {
+            "id": "102",
+            "name": "NEFU",
+            "parent": "38"
+        },
+        "103": {
+            "id": "103",
+            "name": "PD Staff & Teacher Training_2015",
+            "parent": "60"
+        },
+        "104": {
+            "id": "104",
+            "name": "OG",
+            "parent": "9"
+        },
+        "105": {
+            "id": "105",
+            "name": "Entrance Test",
+            "parent": "68"
+        },
+        "106": {
+            "id": "106",
+            "name": "EAP2DEP/Assessment submission_2016 Autumn",
+            "parent": "68"
+        },
+        "107": {
+            "id": "107",
+            "name": "Evaluation by students",
+            "parent": "9"
+        },
+        "109": {
+            "id": "109",
+            "name": "UTas/SDUST Electrical Engineering and Automation / Communications Engineering",
+            "parent": "33"
+        },
+        "110": {
+            "id": "110",
+            "name": "Semester 4_2017",
+            "parent": "39"
+        },
+        "111": {
+            "id": "111",
+            "name": "Semester 4_2016",
+            "parent": "39"
+        },
+        "112": {
+            "id": "112",
+            "name": "PD Staff & Teacher Training_2017",
+            "parent": "60"
+        },
+        "113": {
+            "id": "113",
+            "name": "CAP PD Program 2015",
+            "parent": "16"
+        },
+        "114": {
+            "id": "114",
+            "name": "CAP PD Program 2016",
+            "parent": "16"
+        },
+        "116": {
+            "id": "116",
+            "name": "CAP PD Program 2017",
+            "parent": "16"
+        },
+        "117": {
+            "id": "117",
+            "name": "UWA/SWU Biotechnology",
+            "parent": "23"
+        },
+        "118": {
+            "id": "118",
+            "name": "2017 Spring Semester",
+            "parent": "67"
+        },
+        "119": {
+            "id": "119",
+            "name": "University of Auckland",
+            "parent": "8"
+        },
+        "120": {
+            "id": "120",
+            "name": "UWA/SWU Economics",
+            "parent": "125"
+        },
+        "121": {
+            "id": "121",
+            "name": "Monthly Report",
+            "parent": "9"
+        },
+        "122": {
+            "id": "122",
+            "name": "UWA/SWU",
+            "parent": "23"
+        },
+        "124": {
+            "id": "124",
+            "name": "Quality Assessment Check (ELP)",
+            "parent": "1"
+        },
+        "125": {
+            "id": "125",
+            "name": "UWA Business School Programs",
+            "parent": "23"
+        },
+        "127": {
+            "id": "127",
+            "name": "SUT/IMUFE Accounting",
+            "parent": "31"
+        },
+        "128": {
+            "id": "128",
+            "name": "UTas/SWU Food Safety",
+            "parent": "33"
+        },
+        "130": {
+            "id": "130",
+            "name": "UTas/SWU Electronic Information Engineering",
+            "parent": "33"
+        },
+        "131": {
+            "id": "131",
+            "name": "Pathways to Academic Success_Exercises",
+            "parent": "68"
+        },
+        "132": {
+            "id": "132",
+            "name": "Macquarie University",
+            "parent": "8"
+        },
+        "133": {
+            "id": "133",
+            "name": "MQ/XUST Electrical Engineering",
+            "parent": "132"
+        },
+        "134": {
+            "id": "134",
+            "name": "PD_SUT_Sarawak_2017",
+            "parent": "112"
+        },
+        "136": {
+            "id": "136",
+            "name": "Teacher Space 2017_2018",
+            "parent": "38"
+        },
+        "137": {
+            "id": "137",
+            "name": "AEAP Course Outlines",
+            "parent": "38"
+        },
+        "138": {
+            "id": "138",
+            "name": "Semester 3 & 4_2017",
+            "parent": "39"
+        },
+        "139": {
+            "id": "139",
+            "name": "AEMG Teaching Affairs Center",
+            "parent": "27"
+        },
+        "140": {
+            "id": "140",
+            "name": "2017 Autumn Semester",
+            "parent": "67"
+        },
+        "141": {
+            "id": "141",
+            "name": "Higher Degree by Research (HDR)",
+            "parent": "8"
+        },
+        "142": {
+            "id": "142",
+            "name": "2017 Swinburne/Shandong (Weihai) Joint PhD program",
+            "parent": "141"
+        },
+        "143": {
+            "id": "143",
+            "name": "2018 Swinburne/Shandong (Weihai) Joint PhD Program",
+            "parent": "141"
+        },
+        "144": {
+            "id": "144",
+            "name": "Teaching Arrangement Plan",
+            "parent": "139"
+        },
+        "145": {
+            "id": "145",
+            "name": "Monthly Report",
+            "parent": "139"
+        },
+        "146": {
+            "id": "146",
+            "name": "AEMG DEP/R_Payment",
+            "parent": "68"
+        },
+        "147": {
+            "id": "147",
+            "name": "University of South Australia",
+            "parent": "8"
+        },
+        "148": {
+            "id": "148",
+            "name": "AEMG Scholarship",
+            "parent": "27"
+        },
+        "149": {
+            "id": "149",
+            "name": "Higher Education Training Courses",
+            "parent": "8"
+        },
+        "150": {
+            "id": "150",
+            "name": "Teaching Time Slots",
+            "parent": "139"
+        }
+    }
+];
+			console.log(treeData);
+
+
+			function buildSubTree($elements, $parentId = "0"){
+			    var $arr = [];
+			    for (var i in $elements) {
+			    	var $element = $elements[i];
+			        if($element.parent == $parentId){
+			        	$arr.push($element.id);
+			            var $nodes = buildSubTree($elements, $element.id);
+			            if($nodes.length > 0) {
+			            	$arr = $arr.concat($nodes);
+			            }
+			        }
+			    }
+			    return $arr;
+			}
+
+			function buildTreeForUni($elements) {
+			    var $branch = {};
+			    var elements = $elements[0];
+			    for (var i in elements) {
+			    	var $element = elements[i];
+			        if ($element.parent == 8) {
+			            var $subArr = buildSubTree(elements, $element.id);
+			            $branch[$element.id] = $subArr;
+			        }
+			    }
+			    return $branch;
+			}
+			var jk = buildTreeForUni(treeData);
+			console.log(jk);
+
+/*			var jiecheng = function(x){
+				var ret;
+				if(x > 1){
+					ret = x * jiecheng(x-1);
+				} else{
+					ret = 1;
+				}
+				return ret;
+			}
+			console.log(jiecheng(5));*/
+		</script>
+	</head>
+	<body>
+		<h1>hello world</h1>
+
+	</body>
+</html>

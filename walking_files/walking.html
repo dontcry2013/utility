@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)http://blog.cxycs.com/demos/girl/ -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>HTML5 动画  小女孩四方行走</title>
+
+<!-- <script src="./hm.js"></script> -->
+<script src="./jquery-1.7.2.min.js"></script>
+<script src="./createjs-2013.12.12.min.js"></script>
+<script src="./easeljs-0.7.1.min.js"></script>
+<style type="text/css">
+body{
+	background-color: #202020;
+	color:#e0e0e0;
+}
+
+canvas {
+	border: solid 1px #e0e0e0;
+}
+</style>
+</head>
+<body>
+<h1>第一个HTML5动画</h1>
+<table>
+	<tbody>
+		<tr>
+			<td valign="top">
+				<h2>girl</h2>
+				<p>长按键盘上下左右 ↑ ↓ ← →</p>
+			</td>
+			<td><canvas id="girl" width="500" height="500"></canvas>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<script type="text/javascript">
+var Graphics = createjs.Graphics;
+var canvas = document.getElementById("girl");
+var stage = new createjs.Stage(canvas);
+var regX = 0;
+var regY = 0;
+var girl;
+var sprite;
+
+window.onload = function(){
+	girlInit();
+}
+
+function girlInit(){
+	var opts = {
+		framerate: 8,
+		images: ["./girl.png"],
+		frames: {width:108, height:108, count:64, regX:regX, regY:regY},
+		animations: {
+			frontStand:{
+				frames: [0]
+			},
+        	front: {
+            	frames: [0,1,2,3,4,5,6,7]
+        	},
+        	leftStand:{
+        		frames: [8]
+        	},
+        	leftFrontStand:{
+        		frames: [32]
+        	},
+        	rightFrontStand:{
+        		frames: [40]
+        	},
+        	leftBackStand:{
+        		frames: [48]
+        	},
+        	rightBackStand:{
+        		frames: [56]
+        	},
+        	left: {
+        		frames: [8,9,10,11,12,13,14,15]
+        	},
+        	rightStand:{
+        		frames: [16]
+        	},
+        	right: {
+        		frames: [16,17,18,19,20,21,22,23]
+        	},
+        	backStand:{
+        		frames: [24]
+        	},
+        	back: {
+        		frames: [24,25,26,27,28,29,30,31]
+        	},
+        	leftFront: {
+        		frames: [32,33,34,35,36,37,38,39]
+        	},
+        	rightFront: {
+        		frames: [40,41,42,43,44,45,46,47]
+        	},
+        	leftBack: {
+        		frames: [48,49,50,51,52,53,54,55]
+        	},
+        	rightBack: {
+        		frames: [56,57,58,59,60,61,62,63]
+        	}
+    	}
+	}
+	sprite = new createjs.SpriteSheet(opts);
+	girl = new createjs.Sprite(sprite, "frontStand");
+	stage.addChild(girl);
+	//createjs.Ticker.setFPS(16);
+	createjs.Ticker.addEventListener("tick", tick);
+}
+
+function girlSprite(direction){
+	girl.gotoAndPlay(direction);
+ 	/*girl = new createjs.Sprite(sprite, direction);
+ 	stage.addChild(girl);
+ 	createjs.Ticker.setFPS(12);
+    createjs.Ticker.addEventListener("tick", tick);*/
+}
+
+function tick(event){
+	var speed = event.delta/4000;
+	if (currentDirection == "right") {
+		var position = girl.x+200*speed;
+		var girlW = girl.getBounds().width*girl.scaleX;
+			girl.x = (position >= 420) ? 420 : position;
+	}else if(currentDirection=="left"){
+		if (isNaN(girl.x)) {
+			girl.x=0;
+		};
+		var position = girl.x-200*speed;
+		var girlW = girl.getBounds().width*girl.scaleX;
+			girl.x = (position <= -20) ? -20 : position;
+	}else if (currentDirection=="front") {
+		var position = girl.y+200*speed;
+		var girlH = girl.getBounds().height*girl.scaleY;
+			girl.y = (position >= 392) ? 392 :position;
+	}else if (currentDirection=="back") {
+		var position = girl.y-200*speed;
+		var girlH = girl.getBounds().height*girl.scaleY;
+			girl.y = (position <= 0) ? 0 :position;
+	}else if(currentDirection=="leftFront"){
+		if (isNaN(girl.x)) {
+			girl.x=0;
+		};
+		var position = girl.x-200*speed;
+		var girlW = girl.getBounds().width*girl.scaleX;
+			girl.x = (position <= -20) ? -20 : position;
+			var position = girl.y+200*speed;
+		var girlH = girl.getBounds().height*girl.scaleY;
+			girl.y = (position >= 392) ? 392 :position;
+	}else if(currentDirection=="rightFront"){
+		var position = girl.x+200*speed;
+		var girlW = girl.getBounds().width*girl.scaleX;
+			girl.x = (position >= 420) ? 420 : position;
+		var position = girl.y+200*speed;
+		var girlH = girl.getBounds().height*girl.scaleY;
+			girl.y = (position >= 392) ? 392 :position;
+	}else if(currentDirection=="leftBack"){
+		var position = girl.x-200*speed;
+		var girlW = girl.getBounds().width*girl.scaleX;
+			girl.x = (position <= -20) ? -20 : position;
+		var position = girl.y-200*speed;
+		var girlH = girl.getBounds().height*girl.scaleY;
+			girl.y = (position <= 0) ? 0 :position;
+	}else if(currentDirection=="rightBack"){
+		var position = girl.x+200*speed;
+		var girlW = girl.getBounds().width*girl.scaleX;
+			girl.x = (position >= 420) ? 420 : position;
+		var position = girl.y-200*speed;
+		var girlH = girl.getBounds().height*girl.scaleY;
+			girl.y = (position <= 0) ? 0 :position;
+	}
+    stage.update(event);
+}
+
+function tick2(event){
+	var speed = event.delta/4000;
+	// console.log("tick2", speed);
+	if (currentDirection == "right") {
+		var position = girl.x+200*speed;
+		var girlW = girl.getBounds().width*girl.scaleX;
+			girl.x = (position >= 420) ? 420 : position;
+	}else if(currentDirection=="left"){
+		if (isNaN(girl.x)) {
+			girl.x=0;
+		};
+		var position = girl.x-200*speed;
+		var girlW = girl.getBounds().width*girl.scaleX;
+			girl.x = (position <= -20) ? -20 : position;
+	}else if (currentDirection=="front") {
+		var position = girl.y+200*speed;
+		var girlH = girl.getBounds().height*girl.scaleY;
+			girl.y = (position >= 392) ? 392 :position;
+	}else if (currentDirection=="back") {
+		var position = girl.y-200*speed;
+		var girlH = girl.getBounds().height*girl.scaleY;
+			girl.y = (position <= 0) ? 0 :position;
+	}
+    stage.update(event);
+}
+document.onkeydown = girlAction;
+document.onkeyup = girlStand;
+
+var currentDirection = "";
+
+function girlAction(e){
+	console.log(e.keyCode);
+	var direction = "front";
+	switch(e.keyCode){
+		case 40:
+			direction = "front";
+		break;
+		case 37:
+			direction = "left";
+		break;
+		case 39:
+			direction = "right";
+			regX--;
+		break;
+		case 38:
+			direction = "back";
+		break;
+		case 72://h
+			direction = "leftFront";
+		break;
+		case 74://j
+			direction = "leftBack";
+		break;
+		case 75://k
+			direction = "rightFront";
+			regX--;
+		break;
+		case 76://l
+			direction = "rightBack";
+		break;
+	}
+	if (currentDirection!=direction) {
+		currentDirection = direction;
+		girlSprite(direction);
+	};
+}
+
+function girlStand(){
+	girlSprite(currentDirection+"Stand");
+	currentDirection="";
+}
+</script>
+
+</body>
+</html>
